@@ -14,6 +14,16 @@ First of all, edit the `ip_address_list.txt`. Just add your IP's row by row.
 
 Secondly, add `your_package.apk` to the folder where the script resides.
 
+## Notes on ADB over TCP
+
+In order to use this script, you will have to enable `Developer options` on all your devices.
+
+If you don't know how to do this, just go to the system setting, and tap various times on `build number` until you get a `developer option enabled` message, but you can find a lot of tutorial over the internet.
+
+Now, you can allow `ADB Debugging`, and the `ADB over TCP` option.
+
+This is very important, otherwise the script will fail because it can't connect via `adb connect`.
+
 ## Install my package
 Once you've done with setup, you have to make the script executable, so open a shell and type:
 

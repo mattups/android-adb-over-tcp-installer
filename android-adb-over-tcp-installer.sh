@@ -1,19 +1,19 @@
 #!/bin/bash
 #android-adb-over-tcp-installer
 #Change the ip_address file to add or delete hosts
-#Place the package.apk in the same script folder
+#Place your_package.apk in the same script folder
 
 #Getting timestamp for the log
 timestamp_date=$(date +%F_%T)
 echo -e "====== Upgrade started on "$timestamp_date" ======\n" >> log.txt
 
-#Getting addresses to perform the upgrade with package.apk
+#Getting addresses to perform the upgrade with your_package.apk
 cat ip_address_list.txt |  while read target
     do
         ping -c 1 "$target" >> /dev/null
         if [ $? -eq 0 ]; then
             adb connect "$target";
-            adb install package.apk;
+            adb install your_package.apk;
             adb disconnect;
             echo "Installed on" $target "- $timestamp_date" >> log.txt;
         else

@@ -7,10 +7,10 @@
 timestamp_date=$(date +%F_%T)
 touch log_"$timestamp_date".txt
 
-echo -e "====== Process started on "$timestamp_date" ======\n" >> log_$timestamp_date.txt
-
 #Getting addresses to install your_package.apk
 #TODO Define logic for ADB
+echo -e "====== Process started on "$timestamp_date" ======\n" >> log_$timestamp_date.txt
+
 cat ip_address_list.txt |  while read target
     do
         ping -c 1 "$target" >> /dev/null

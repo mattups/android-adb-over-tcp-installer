@@ -16,7 +16,7 @@ cat ip_address_list.txt |  while read target
         ping -c 1 "$target" >> /dev/null
         if [ $? -eq 0 ]; then
             adb connect "$target" &&
-            adb install your_package.apk &&
+            adb install -r your_package.apk &&
             adb disconnect;
             echo "Installed on" $target "- $timestamp_date" >> log_$timestamp_date.txt;
         else
